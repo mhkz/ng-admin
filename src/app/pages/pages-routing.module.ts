@@ -17,6 +17,14 @@ const routes: Routes = [{
       redirectTo: 'dashboard',
       pathMatch: 'full',
     },
+    {
+      path: 'miscellaneous',
+      loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
+    },
+    {
+      path: 'article',
+      loadChildren: './article/article.module#ArticleModule',
+    },
   ],
 }];
 

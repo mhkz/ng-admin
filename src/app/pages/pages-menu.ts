@@ -33,4 +33,24 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
+  {
+    title: 'Miscellaneous',
+    icon: 'nb-shuffle',
+    children: [
+      {
+        title: '404',
+        link: '/pages/miscellaneous/404',
+      },
+    ],
+  },
+  {
+    title: 'Article',
+    icon: 'nb-shuffle',
+    children: [
+      {
+        title: 'articleList',
+        link: '/pages/article/list',
+      },
+    ],
+  },
 ];
