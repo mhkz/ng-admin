@@ -2,7 +2,7 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'Dashboard',
+    title: '仪表盘',
     icon: 'nb-home',
     link: '/pages/dashboard',
     home: true,
@@ -10,6 +10,52 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'FEATURES',
     group: true,
+  },
+  {
+    title: '全局设置',
+    icon: 'nb-shuffle',
+    link: '/pages/setting',
+  },
+  {
+    title: '公告管理',
+    icon: 'nb-shuffle',
+    link: '/pages/announcement',
+  },
+  {
+    title: '文章管理',
+    icon: 'nb-compose',
+    children: [
+      {
+        title: '所有文章',
+        link: '/pages/article/list',
+      },
+      {
+        title: '分类目录',
+        link: '/pages/article/category',
+      },
+      {
+        title: '发布文章',
+        link: '/pages/article/create',
+      },
+      {
+        title: '文章标签',
+        link: 'pages/article/tag',
+      },
+    ],
+  },
+  {
+    title: '评论管理',
+    icon: 'nb-shuffle',
+    children: [
+      {
+        title: '所有评论',
+        link: '/pages/comment/all',
+      },
+      {
+        title: '留言评论',
+        link: '/pages/article/category',
+      },
+    ],
   },
   {
     title: 'Auth',
@@ -40,16 +86,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: '404',
         link: '/pages/miscellaneous/404',
-      },
-    ],
-  },
-  {
-    title: 'Article',
-    icon: 'nb-shuffle',
-    children: [
-      {
-        title: 'articleList',
-        link: '/pages/article/list',
       },
     ],
   },
