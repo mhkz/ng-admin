@@ -1,3 +1,111 @@
-<nb-card-body>
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <nb-card-front>
+            <nb-card status="success">
+                <nb-card-header>文章列表</nb-card-header>
+                <nb-card-body>
+                    <div class="content-top-tools">
+                        <div class="pull-left">
+                            <div class="btn-group">
+                                <button type="button"
+                                        nbButton
+                                        active
+                                        class="btn btn-default">
+                                    <span>全部</span>
+                                </button>
+                                <button type="button"
+                                        nbButton
+                                        class="btn disabled">
+                                    <span>已发布</span>
+                                </button>
+                                <button type="button"
+                                        nbButton
+                                        class="btn disabled">
+                                    <span>草稿</span>
+                                </button>
+                                <button type="button"
+                                        nbButton
+                                        class="btn disabled">
+                                    <span>回收站</span>
+                                    <!--<span *ngIf="isState(PublishState.recycle)">&nbsp;({{ currentListTotal }})</span>-->
+                                </button>
+                            </div>
 
-</nb-card-body>
+                            <span>&nbsp;&nbsp;</span>
+
+                            <div class="btn-group">
+                                <button type="button"
+                                        nbButton
+                                        active
+                                        class="btn btn-default">
+                                    <span>刷新</span>
+                                </button>
+                                <button type="button"
+                                        nbButton
+                                        class="btn disabled">
+                                    <span>清空条件</span>
+                                </button>
+                                <button type="button"
+                                        nbButton
+                                        class="btn disabled">
+                                    <span>批量操作</span>
+                                </button>
+                            </div>
+                        </div>
+                        <form class="pull-right form-inline article-get-form">
+                            <div class="input-group">
+                                <input type="text"
+                                       class="form-control with-default-addon"
+                                       placeholder="文章标题、描述">
+                                <span class="input-group-btn"><button class="btn btn-default" type="submit" >搜索</button></span>
+                            </div>
+                        </form>
+                        <span class="pull-right">&nbsp;&nbsp;&nbsp;</span>
+                        <div class="pull-right form-inline">
+                            <select class="form-control c-select">
+                                <option default>创建时间</option>
+                                <option>浏览次数</option>
+                                <option>评论条数</option>
+                            </select>
+                            <span>&nbsp;&nbsp;</span>
+                            <select class="form-control c-select">
+                                <option default value="all">所有分类</option>
+                                <ng-template >
+                                    <option >
+                                        <span >└</span>
+                                        <strong>11</strong>
+                                        <span>sf</span>
+                                    </option>
+                                </ng-template>
+                            </select>
+                            <span>&nbsp;&nbsp;</span>
+                            <select class="form-control c-select" >
+                                <option default value="all">所有标签</option>
+                                <ng-template >
+                                    <option >
+                                        <span>tag</span>
+                                    </option>
+                                </ng-template>
+                            </select>
+                            <span>&nbsp;&nbsp;</span>
+                            <select class="form-control c-select" >
+                                <option default>所有类型</option>
+                                <option >公开</option>
+                                <option >密码</option>
+                                <option >私密</option>
+                            </select>
+                            <span>&nbsp;&nbsp;</span>
+                            <select class="form-control c-select">
+                                <option  default>所有来源</option>
+                                <option >原创</option>
+                                <option >转载</option>
+                                <option >混合</option>
+                            </select>
+                        </div>
+                    </div>
+                </nb-card-body>
+            </nb-card>
+        </nb-card-front>
+    </div>
+</div>
+

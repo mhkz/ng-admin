@@ -37,6 +37,7 @@ import {NavigationEnd, Router} from '@angular/router';
             <nb-layout-column class="main-content">
                 <h2>{{this.pageTitle}}
                     <small>{{this.pageDescript}}</small>
+                    <span style="float: right;">{{title}}</span>
                 </h2>
                 <ng-content select="router-outlet"></ng-content>
             </nb-layout-column>
@@ -67,6 +68,7 @@ export class SampleLayoutComponent implements OnDestroy {
     pageTitle = '';
     pageDescript = '';
     urlArr = [];
+    title = '';
     subMenu: NbMenuItem[] = [
         {
             title: 'PAGE LEVEL MENU',
@@ -89,7 +91,19 @@ export class SampleLayoutComponent implements OnDestroy {
         squareOdd.subscribe((event: NavigationEnd) => {
             this.urlArr = event.url.split('/');
             this.pageTitle = this.urlArr[2];
-            this.pageDescript = this.urlArr[3] ? `/${this.urlArr[3]}` : '';
+            this.pageDescript = this.urlArr[3] ? `/` + ' ' + `${this.urlArr[3]}` : '';
+            const currentTitle = this.urlArr[3] ? this.urlArr[3] : '';
+            switch (currentTitle) {
+                case 'list':
+                    this.title = '文章列表';
+                    break;
+                case 'create':
+                    this.title = '创建文章';
+                    break;
+                default:
+                    this.title = '仪表盘';
+                    break;
+            }
         });
         this.stateService.onLayoutState()
             .pipe(takeWhile(() => this.alive))
